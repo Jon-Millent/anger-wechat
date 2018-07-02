@@ -1,0 +1,32 @@
+{
+  "name": "anger-wechat",
+  "version": "1.0.0",
+  "description": "封装微信api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jon-Millent/anger-wechat.git"
+  },
+  "keywords": [
+    "wexin",
+    "wechat-api",
+    "weixin-api",
+    "api"
+  ],
+  "author": "millent",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jon-Millent/anger-wechat/issues"
+  },
+  "homepage": "https://github.com/Jon-Millent/anger-wechat#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "lodash": "^4.17.10",
+    "node-uuid": "^1.4.8",
+    "request": "^2.87.0",
+    "uuid": "^3.3.2"
+  }
+}
