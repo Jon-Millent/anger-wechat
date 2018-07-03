@@ -153,9 +153,38 @@ let jsTricktConfig = await weixinApi.getJsSdkConfig({
 <br>
 <br>  
 
-# 支付方法  
+# 支付
+```js
+var weixinApi = new AngerWechat({
+    appId: 'wxf638c1f64239e786',
+    appSecret: 'e10c0db08562640e0a9fffab940724c2',
+    authUrl: 'http://www.toolos.cc/get-weixin-code.html',
+    payment: {
+        mchId: '123456',
+        partnerKey: '456789',
+        pfx: path.join(__dirname, 'apiclient_cert.p12'),
+        notify_url: '',
+        spbill_create_ip: ''
+    }
+})
 
-支付模块依赖于 `@wechat-pay` <a href="https://github.com/supersheep/wechat-pay">文档地址</a> <a href="https://github.com/Jon-Millent/wechat-pay">备用地址</a>
+weixinApi.payment.sendRedPacket({
+    total_num: 1,
+    mch_billno: '1000000',
+    send_name: '测试标题',
+    re_openid: 'asdasdasdasdasdasdasdasdasd',
+    total_amount: 100,
+    wishing: '恭喜发财，大吉大利',
+    act_name: '扫码领红包',
+    remark: '备注信息',
+    client_ip: '127.0.0.1',
+    scene_id: 'PRODUCT_2'
+}, (err, result) => {
+    console.log(err, result)
+});
+```
+支付方法挂在在 `weixinApi.payment` 下， 模块依赖于 `@wechat-pay`，使用方法和 `wechat-pay`一样  
+<a href="https://github.com/supersheep/wechat-pay">文档地址</a> <a href="https://github.com/Jon-Millent/wechat-pay">备用地址</a>
 
 
 # 附录
