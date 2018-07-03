@@ -64,19 +64,89 @@ let jsTrickt = await weixinApi.getJsTicket({
 	}
 }
 ```
+<br>
+<br>
 
 ## `getAuthUrl` 
 获取 Auth地址,重定向之后用来获取code
 ```js
 let authURl = weixinApi.getAuthUrl({
 	redirect_uri: 'http://www.baidu.com',
-	scope: 'snsapi_userinfo'
+	scope: 'snsapi_userinfo' // snsapi_base:静默授权，snsapi_userinfo:提示授权（可以后续获取用户信息）
 })
 console.log(authURl)
 // http://www.toolos.cc/get-weixin-code.html?appid=wxf638c1f64239e786&redirect_uri=http://www.baidu.com&scope=snsapi_userinfo&state=STATE
 ```
+<br>
+<br>
 
 ## `getAuthAccessTokenByCode`   
 根据code获取 openid 
+```js
+let codeInfo = await weixinApi.getAuthAccessTokenByCode({
+    code: '061729xv1BtSAa09g8yv1hr0xv1729xB'
+})
+```
+```json
+{
+	"code": 200,
+	"msg": "请求成功",
+	"data": {
+		"access_token": "11_Vc7D8AoYURWoECzJgD6Q1ccUOOHypO6mU0RQF7BnliKKCY5arfVvl0h3PWURwpK7QFgPLfDkHLX-9Dif6BTntw",
+		"expires_in": 7200,
+		"refresh_token": "11_ii3uONcMPA-04RjuLlckMMiwaDGF2MjW2SB5vOI3Sshz39PAVn7kOyC80_pPmmRJxqbfJ3Rdw07WG154AeP83Q",
+		"openid": "oI-Aa04T6FrpFFpTfyAaXR4SKacU",
+		"scope": "snsapi_userinfo"
+	}
+}
+```
+<br>
+<br>
 
+## `getUserInfo`
+根据access_token 和 openid获取用户信息，注意这里的获取回调url方法 `getAuthUrl` 的 `scope` 需要传 `snsapi_userinfo`
+```js
+let userInfo = await weixinApi.getUserInfo({
+	access_token: codeInfo.data.access_token,
+	openid: codeInfo.data.openid
+})
+```
+```json
+{
+	"code": 200,
+	"msg": "请求成功",
+	"data": {
+		"openid": "oI-Aa04T6FrpFFpTfyAaXR4SKacU",
+		"nickname": "吃鱼的帆",
+		"sex": 1,
+		"language": "zh_CN",
+		"city": "**",
+		"province": "**",
+		"country": "中国",
+		"headimgurl": "http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIS3x9dFdptD1s2ZZMTDCriaiaXiaDPtyZw3vfMmJLyQ8PU8laBv4MNnJh5c9QWtTQey0m4FYUPVEvAQ/132",
+		"privilege": []
+	}
+}
+```
 
+<br>
+<br>
+
+## `getJsSdkConfig`
+获取js sdk config配置
+```js
+let jsTricktConfig = await weixinApi.getJsSdkConfig({
+	ticket: 'HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCDQ2Bnx34ua3MVs9zUZpV0wQPe8h83AwFSZQREHGgmuKpqvdsg',
+	url: 'http://www.toolos.cc' // 调用js sdk 页面地址
+})
+```
+
+```json
+{
+	"appId": "wxf638c1f64239e786",
+	"signature": "2c18eb8d6adaa5e02a9df517e776f5eef40ed402",
+	"noncestr": "04b21a6a-caea-4878-9fdb-8b2c1ff699b0",
+	"timestamp": 1530636997,
+	"jsapi_ticket": "HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCDQ2Bnx34ua3MVs9zUZpV0wQPe8h83AwFSZQREHGgmuKpqvdsg"
+}
+```
