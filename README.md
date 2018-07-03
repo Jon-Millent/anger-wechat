@@ -5,8 +5,7 @@
 ## 万恶之源-如何开始
 `npm install anger-wechat --save`
 
-## 使用
-```
+```javascript
 var AngerWechat = require('anger-wechat')
 var weixinApi = new AngerWechat({
     appId: 'wxf638c1f64239e786', // appId
