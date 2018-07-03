@@ -21,7 +21,8 @@ var weixinApi = new AngerWechat({
 })
 ```
 
-## 获取 access_token <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140183">戳我查看官方文档</a>
+## `getGlobalAccessToken`  
+获取 access_token <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140183">戳我查看官方文档</a>
 > access_token是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用access_token。开发者需要进行妥善保存。access_token的存储至少要保留512个字符空间。access_token的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的access_token失效。
 
 ```js
@@ -40,10 +41,10 @@ let access_token = await weixinApi.getGlobalAccessToken()
 ```  
 <br>
 <br>
-<br>
-<br>
 
-## 获取 js api_ticket <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115">戳我查看官方文档</a>
+
+## `getJsTicket`   
+获取 js api_ticket  <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115">戳我查看官方文档</a>
 > api_ticket 是用于调用微信卡券JS API的临时票据，有效期为7200 秒，通过access_token 来获取。
 ```js
 let jsTrickt = await weixinApi.getJsTicket({
@@ -63,3 +64,19 @@ let jsTrickt = await weixinApi.getJsTicket({
 	}
 }
 ```
+
+## `getAuthUrl` 
+获取 Auth地址,重定向之后用来获取code
+```js
+let authURl = weixinApi.getAuthUrl({
+	redirect_uri: 'http://www.baidu.com',
+	scope: 'snsapi_userinfo'
+})
+console.log(authURl)
+// http://www.toolos.cc/get-weixin-code.html?appid=wxf638c1f64239e786&redirect_uri=http://www.baidu.com&scope=snsapi_userinfo&state=STATE
+```
+
+## `getAuthAccessTokenByCode`   
+根据code获取 openid 
+
+
