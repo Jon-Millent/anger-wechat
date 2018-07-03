@@ -37,7 +37,11 @@ let access_token = await weixinApi.getGlobalAccessToken()
 		"expires_in": 7200 
 	} 
 }
-```
+```  
+<br>
+<br>
+<br>
+<br>
 
 ## 获取 js api_ticket <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115">戳我查看官方文档</a>
 > api_ticket 是用于调用微信卡券JS API的临时票据，有效期为7200 秒，通过access_token 来获取。
