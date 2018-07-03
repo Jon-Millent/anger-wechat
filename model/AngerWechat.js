@@ -1,5 +1,5 @@
 const $util = require('../util')
-
+const Payment = require('wechat-pay').Payment;
 
 class AngerWechat{
   
@@ -14,7 +14,18 @@ class AngerWechat{
       appId: this.appId,
       appSecret: this.appSecret
     })
-    
+
+    if(config.payment){
+      this.payment = new Payment({
+        appId: this.appId,
+        mchId: config.payment.mchId,
+        partnerKey: config.payment.partnerKey,
+        pfx: require('fs').readFileSync(config.payment.pfx),
+        notify_url: config.payment.notify_url,
+        spbill_create_ip: config.payment.spbill_create_ip
+      });
+    }
+
   }
   
   // 是否是微信环境
