@@ -1,6 +1,6 @@
 var AngerWechat = require('../index')
 
-var weixinApi = new AngerWechat.AngerWechat({
+var weixinApi = new AngerWechat({
   appId: 'wxf638c1f64239e786',
   appSecret: 'e10c0db08562640e0a9fffab940724c2',
   authUrl: 'http://www.toolos.cc/get-weixin-code.html'
@@ -9,10 +9,10 @@ var weixinApi = new AngerWechat.AngerWechat({
 async function test() {
   
   // get Access Token
-  /*
+
     let access_token = await weixinApi.getGlobalAccessToken()
     console.log(access_token)
-    */
+
     /*
     { code: 200,
     msg: '请求成功',

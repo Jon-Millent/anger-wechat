@@ -1,3 +1,1 @@
-module.exports = {
-  AngerWechat: require('./model/AngerWechat')
-}
+module.exports = require('./model/AngerWechat')
