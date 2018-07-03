@@ -134,7 +134,7 @@ let userInfo = await weixinApi.getUserInfo({
 <br>
 
 ## `getJsSdkConfig`
-获取js sdk config配置
+获取js sdk config配置 <a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign">微信 JS 接口签名校验工具</a>
 ```js
 let jsTricktConfig = await weixinApi.getJsSdkConfig({
 	ticket: 'HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCDQ2Bnx34ua3MVs9zUZpV0wQPe8h83AwFSZQREHGgmuKpqvdsg',
