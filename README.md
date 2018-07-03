@@ -156,3 +156,12 @@ let jsTricktConfig = await weixinApi.getJsSdkConfig({
 # 支付方法  
 
 支付模块依赖于 `@wechat-pay` <a href="https://github.com/supersheep/wechat-pay">文档地址</a> <a href="https://github.com/Jon-Millent/wechat-pay">备用地址</a>
+
+
+# 附录
+
+## 关于 authUrl 参数
+待补充。。。
+
+## <a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign">微信 JS 接口签名校验工具</a>
+## <a href="https://mp.weixin.qq.com/debug/">微信公众平台接口调试工具</a>
