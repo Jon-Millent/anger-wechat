@@ -163,5 +163,8 @@ let jsTricktConfig = await weixinApi.getJsSdkConfig({
 ## 关于 authUrl 参数
 待补充。。。
 
-## <a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign">微信 JS 接口签名校验工具</a>
-## <a href="https://mp.weixin.qq.com/debug/">微信公众平台接口调试工具</a>
+## 校验工具
+
+* <a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign">微信 JS 接口签名校验工具</a>
+* <a href="https://mp.weixin.qq.com/debug/">微信公众平台接口调试工具</a>
+
