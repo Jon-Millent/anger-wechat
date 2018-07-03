@@ -2,7 +2,7 @@
 ![未标题-1.jpg](https://i.loli.net/2018/07/03/5b3b089da8d52.jpg)
 
 
-## 万恶之源-如何开始
+# 万恶之源-如何开始
 `npm install anger-wechat --save`
 
 ```javascript
@@ -20,7 +20,7 @@ var weixinApi = new AngerWechat({
     }
 })
 ```
-
+# 常用方法
 ## `getGlobalAccessToken`  
 获取 access_token <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140183">戳我查看官方文档</a>
 > access_token是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用access_token。开发者需要进行妥善保存。access_token的存储至少要保留512个字符空间。access_token的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的access_token失效。
@@ -150,3 +150,7 @@ let jsTricktConfig = await weixinApi.getJsSdkConfig({
 	"jsapi_ticket": "HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCDQ2Bnx34ua3MVs9zUZpV0wQPe8h83AwFSZQREHGgmuKpqvdsg"
 }
 ```
+<br>
+<br>
+# 支付方法
+支付模块依赖于 `@wechat-pay` <a href="https://github.com/supersheep/wechat-pay">文档地址</a> <a href="https://github.com/Jon-Millent/wechat-pay">备用地址</a>
