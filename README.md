@@ -105,7 +105,7 @@ let codeInfo = await weixinApi.getAuthAccessTokenByCode({
 <br>
 
 ## `getUserInfo`
-根据access_token 和 openid获取用户信息，注意这里的获取回调url方法 `getAuthUrl` 的 `scope` 需要传 `snsapi_userinfo`
+根据 `getAuthAccessTokenByCode` 获取的 `access_token` 和 `openid` 获取用户信息，注意这里的获取回调url方法 `getAuthUrl` 的 `scope` 需要传 `snsapi_userinfo`
 ```js
 let userInfo = await weixinApi.getUserInfo({
 	access_token: codeInfo.data.access_token,
