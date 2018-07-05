@@ -16,7 +16,13 @@ class AngerWechat{
     })
 
     if(config.payment){
-      this.angerPay = new AngerPay(config)
+      this.angerPay = new AngerPay({
+        partnerKey: config.payment.partnerKey,
+        appId: config.appId,
+        mchId: config.payment.mchId,
+        notifyUrl: config.payment.notifyUrl,
+        pfx: config.payment.pfx
+      })
     }
 
   }
