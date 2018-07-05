@@ -22,7 +22,7 @@ var weixinApi = new AngerWechat({
 
 ![刷卡支付](https://pay.weixin.qq.com/wiki/doc/api/img/chapter5_1_0.jpg)
 
-```
+```js
 let callback = await weixinApi.angerPay.scanCodePayment({
 body: '商品描述',
     out_trade_no: 'lol1217752501201407033233368020', 【必传】商户订单号
