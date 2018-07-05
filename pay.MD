@@ -14,8 +14,8 @@ var weixinApi = new AngerWechat({
     }
 })
 ```
-
-* `angerPay.scanCodePayment` 刷卡支付
+## api列表
+* `angerPay.scanCodePayment` <a href="#scancodepayment">刷卡支付</a>
 
 # scanCodePayment
 刷卡支付 <a href="https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_10&index=1">官方文档地址</a>  
