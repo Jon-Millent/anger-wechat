@@ -1,5 +1,5 @@
 const $util = require('../util')
-const Payment = require('wechat-pay').Payment;
+const AngerPay = require('../lib/anger-pay')
 
 class AngerWechat{
   
@@ -16,14 +16,7 @@ class AngerWechat{
     })
 
     if(config.payment){
-      this.payment = new Payment({
-        appId: this.appId,
-        mchId: config.payment.mchId,
-        partnerKey: config.payment.partnerKey,
-        pfx: require('fs').readFileSync(config.payment.pfx),
-        notify_url: config.payment.notify_url,
-        spbill_create_ip: config.payment.spbill_create_ip
-      });
+      this.angerPay = new AngerPay(config)
     }
 
   }
