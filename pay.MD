@@ -24,7 +24,7 @@ var weixinApi = new AngerWechat({
 
 ```js
 let callback = await weixinApi.angerPay.scanCodePayment({
-body: '商品描述',
+    body: '商品描述',【必传】商品描述
     out_trade_no: 'lol1217752501201407033233368020', 【必传】商户订单号
     total_fee: 1, //【必传】收款价格，单位（分）
     spbill_create_ip: '127.0.0.1',//【必传】终端IP
