@@ -155,7 +155,7 @@ let jsTricktConfig = await weixinApi.getJsSdkConfig({
 <br>  
 
 # 支付
-支付方法准备从`weixin-pay`模块中独立，并继续拓展功能。请等待后续开发和文档
+<a href="戳我查看文档地址">https://github.com/Jon-Millent/anger-wechat/blob/master/pay.MD</a>
 
 # 附录
 
