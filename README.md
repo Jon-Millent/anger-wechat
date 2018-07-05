@@ -18,9 +18,8 @@ var weixinApi = new AngerWechat({
     payment: { // 可选 如果需要支付模块的话
         mchId: '123456',
         partnerKey: '456789',
-        pfx: path.join(__dirname, 'apiclient_cert.p12'),
-        notify_url: '',
-        spbill_create_ip: ''
+        pfx: path.join(__dirname, 'apiclient_cert.p12'), //【可选】证书路径，不传大多接口掉不了
+        notifyUrl: '' // 【可选】微信支付接受到结果'
     }
 })
 ```
