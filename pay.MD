@@ -15,9 +15,29 @@ var weixinApi = new AngerWechat({
 })
 ```
 
-* `scanCodePayment` 刷卡支付
+* `angerPay.scanCodePayment` 刷卡支付
 
 # scanCodePayment
 刷卡支付 <a href="https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_10&index=1">官方文档地址</a>  
 
 ![刷卡支付](https://pay.weixin.qq.com/wiki/doc/api/img/chapter5_1_0.jpg)
+
+```
+let callback = await weixinApi.angerPay.scanCodePayment({
+body: '商品描述',
+    out_trade_no: 'lol1217752501201407033233368020', 【必传】商户订单号
+    total_fee: 1, //【必传】收款价格，单位（分）
+    spbill_create_ip: '127.0.0.1',//【必传】终端IP
+    auth_code: '100087493850578200',//【必传】付款码
+    device_info: '',//【选传】设备号
+    sign_type: '',//【选传】签名类型
+    detail: '',//【选传】商品详情
+    attach: '',//【选传】附加数据
+    fee_type: '',//【选传】货币类型
+    goods_tag: '',//【选传】订单优惠标记
+    limit_pay: '',//【选传】指定支付方式
+    time_start: '',//【选传】交易起始时间
+    time_expire: '',//【选传】交易结束时间
+    scene_info: '',//【选传】场景信息
+})
+```
