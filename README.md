@@ -155,7 +155,7 @@ let jsTricktConfig = await weixinApi.getJsSdkConfig({
 <br>  
 
 # 支付
-<a href="戳我查看文档地址">https://github.com/Jon-Millent/anger-wechat/blob/master/pay.MD</a>
+<a href="https://github.com/Jon-Millent/anger-wechat/blob/master/pay.MD">戳我查看文档地址</a>
 
 # 附录
 
