@@ -1,6 +1,6 @@
 # 微信支付文档
 ## 配置
-```
+```js
 var AngerWechat = require('anger-wechat')
 var weixinApi = new AngerWechat({
     appId: 'wxf638c1f64239e786', // appId
