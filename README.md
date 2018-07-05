@@ -2,6 +2,9 @@
 愤怒的微信😡😡😡😡😡😡😡😡😡😡😡
 ![未标题-1.jpg](https://i.loli.net/2018/07/03/5b3b089da8d52.jpg)
 
+## 导航
+* 常用方法
+* <a href="https://github.com/Jon-Millent/anger-wechat/blob/master/pay.MD">支付</a>
 
 # 万恶之源-如何开始
 `npm install anger-wechat --save`
