@@ -2,6 +2,9 @@
 愤怒的微信😡😡😡😡😡😡😡😡😡😡😡
 ![未标题-1.jpg](https://i.loli.net/2018/07/03/5b3b089da8d52.jpg)
 
+## 导航
+* 常用方法
+* <a href="https://github.com/Jon-Millent/anger-wechat/blob/master/pay.MD">支付</a>
 
 # 万恶之源-如何开始
 `npm install anger-wechat --save`
@@ -15,9 +18,8 @@ var weixinApi = new AngerWechat({
     payment: { // 可选 如果需要支付模块的话
         mchId: '123456',
         partnerKey: '456789',
-        pfx: path.join(__dirname, 'apiclient_cert.p12'),
-        notify_url: '',
-        spbill_create_ip: ''
+        pfx: path.join(__dirname, 'apiclient_cert.p12'), //【可选】证书路径，不传大多接口掉不了
+        notifyUrl: '' // 【可选】微信支付接受到结果'
     }
 })
 ```
@@ -155,7 +157,7 @@ let jsTricktConfig = await weixinApi.getJsSdkConfig({
 <br>  
 
 # 支付
-支付方法准备从`weixin-pay`模块中独立，并继续拓展功能。请等待后续开发和文档
+<a href="https://github.com/Jon-Millent/anger-wechat/blob/master/pay.MD">戳我查看文档地址</a>
 
 # 附录
 
