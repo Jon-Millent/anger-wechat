@@ -168,7 +168,7 @@ let jsTricktConfig = await weixinApi.getJsSdkConfig({
 ## `isWechat`
 判断是否是微信环境
 ```js
-let jsTricktConfig = weixinApi.isWechat(request) // 传入 `request` 对象，返回 true | false
+let isWeixin = weixinApi.isWechat(request) // 传入 `request` 对象，返回 true | false
 ```
 
 # 支付
