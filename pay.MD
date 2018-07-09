@@ -18,6 +18,15 @@ var weixinApi = new AngerWechat({
 ```
 ## api列表
 * `angerPay.scanCodePayment` <a href="#scancodepayment">刷卡支付</a>
+* `angerPay.orderQuery` <a href="#orderQuery">查询订单</a>
+* `angerPay.brandPay` <a href="#brandPay">付钱</a>
+* `angerPay.refund` <a href="#refund">退款</a>
+* `angerPay.sendRedPacket` <a href="#sendRedPacket">发红包</a>
+* `angerPay.redPacketQuery` <a href="#redPacketQuery">查询红包状态</a>
+* `angerPay.transfers` <a href="#transfers">企业付款</a>
+* `angerPay.downloadBill` <a href="#downloadBill">查询历史订单</a>
+
+
 
 ### scanCodePayment
 刷卡支付 <a href="https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_10&index=1">官方文档地址</a>  
@@ -121,8 +130,8 @@ app.use('<notifyUrl>', weixinApi.angerPay.middleware(initConfig).getNotify().don
 <br>
 <br>
 
-### brandPay
-付钱
+### refund
+退款
 ```js
 let callback = await weixinApi.angerPay.refund({
   out_trade_no: "kfc001",
