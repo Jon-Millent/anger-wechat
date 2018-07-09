@@ -4,6 +4,14 @@
 
 ## 导航
 * 常用方法
+  * <a href="#getGlobalAccessToken">getGlobalAccessToken</a>获取 access_token
+  * <a href="#getJsTicket">getJsTicket</a>获取 js api_ticket
+  * <a href="#getAuthUrl">getAuthUrl</a>获取 Auth地址
+  * <a href="#getAuthAccessTokenByCode">getAuthAccessTokenByCode</a>根据code获取 openid
+  * <a href="#getUserInfo">getUserInfo</a>获取用户信息
+  * <a href="#getJsSdkConfig">getJsSdkConfig</a>获取js sdk config配置
+  * <a href="#isWechat">isWechat</a>判断是否是微信环境
+  
 * <a href="https://github.com/Jon-Millent/anger-wechat/blob/master/pay.MD">支付</a>
 
 # 万恶之源-如何开始
@@ -155,6 +163,12 @@ let jsTricktConfig = await weixinApi.getJsSdkConfig({
 ```
 <br>
 <br>  
+
+## `isWechat`
+判断是否是微信环境
+```js
+let jsTricktConfig = weixinApi.isWechat(request) // 传入 `request` 对象，返回 true | false
+```
 
 # 支付
 <a href="https://github.com/Jon-Millent/anger-wechat/blob/master/pay.MD">戳我查看文档地址</a>
