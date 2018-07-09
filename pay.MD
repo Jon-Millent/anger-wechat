@@ -19,7 +19,7 @@ var weixinApi = new AngerWechat({
 ## api列表
 * `angerPay.scanCodePayment` <a href="#scancodepayment">刷卡支付</a>
 
-# scanCodePayment
+### scanCodePayment
 刷卡支付 <a href="https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_10&index=1">官方文档地址</a>  
 
 ![刷卡支付](https://pay.weixin.qq.com/wiki/doc/api/img/chapter5_1_0.jpg)
@@ -44,8 +44,9 @@ let callback = await weixinApi.angerPay.scanCodePayment({
 })
 ```
 <br>
-<br>
-# orderQuery
+<br>  
+
+### orderQuery
 查询订单 <a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_2">官方文档地址</a>  
 ```js
 let callback = await weixinApi.angerPay.orderQuery({
@@ -53,9 +54,11 @@ let callback = await weixinApi.angerPay.orderQuery({
 })
 ```
 <br>
-<br>
-* 以下方法和文档均继承自 `wechat-pay` 
-# brandPay
+<br>  
+
+* 以下方法和文档均继承自 `wechat-pay`   
+
+### brandPay
 付钱
 ```js
 let callback = await weixinApi.angerPay.brandPay({
@@ -67,12 +70,15 @@ let callback = await weixinApi.angerPay.brandPay({
   openid: req.user.openid,
   trade_type: 'JSAPI'
 })
-```
+```  
+
 注：
 1. 页面的路径需要位于`支付授权目录`下
-2. 由于每次呼出支付界面，无论用户是否支付成功，out_trade_no 都会失效（OUT_TRADE_NO_USED），所以这里使用timestamp保证每次的id不同。业务逻辑中应该自行维护之
+2. 由于每次呼出支付界面，无论用户是否支付成功，out_trade_no 都会失效（OUT_TRADE_NO_USED），所以这里使用timestamp保证每次的id不同。业务逻辑中应该自行维护之  
+
 <br>
-<br>
+<br>  
+
 前端通过
 
 ```javascript
@@ -87,7 +93,8 @@ WeixinJSBridge.invoke('getBrandWCPayRequest', payargs, function(res){
 ```
 来呼出微信的支付界面
 
-# 接收微信付款确认请求
+### 接收微信付款确认请求  
+
 ```javascript
 
 app.use('<notifyUrl>', weixinApi.angerPay.middleware(initConfig).getNotify().done(function(message, req, res, next) {
@@ -113,7 +120,7 @@ app.use('<notifyUrl>', weixinApi.angerPay.middleware(initConfig).getNotify().don
 <br>
 <br>
 
-# brandPay
+### brandPay
 付钱
 ```js
 let callback = await weixinApi.angerPay.refund({
@@ -127,7 +134,7 @@ let callback = await weixinApi.angerPay.refund({
 <br>
 <br>
 
-# 接收退款确认请求
+### 接收退款确认请求
 
 ```javascript
 
@@ -156,7 +163,7 @@ app.use('<notifyUrl>', weixinApi.angerPay.middleware(initConfig).getRefundNotify
 <br>
 <br>
 
-# sendRedPacket
+### sendRedPacket
 发红包
 ```js
 let callback = await weixinApi.angerPay.sendRedPacket({
@@ -174,7 +181,7 @@ let callback = await weixinApi.angerPay.sendRedPacket({
 ```
 <br>
 <br>
-# redPacketQuery
+### redPacketQuery
 查询红包状态
 ```js
 let callback = await weixinApi.angerPay.redPacketQuery({
@@ -184,7 +191,7 @@ let callback = await weixinApi.angerPay.redPacketQuery({
 <br>
 <br>
 
-# transfers
+### transfers
 企业付款
 ```js
 let callback = await weixinApi.angerPay.transfers({
@@ -199,7 +206,7 @@ let callback = await weixinApi.angerPay.transfers({
 根据微信文档，当返回错误码为“SYSTEMERROR”时，一定要使用原单号重试，否则可能造成重复支付等资金风险。
 <br>
 <br>
-# downloadBill
+### downloadBill
 查询历史订单
 ```js
 let callback = await weixinApi.angerPay.downloadBill({
