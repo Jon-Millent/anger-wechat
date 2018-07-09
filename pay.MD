@@ -57,6 +57,7 @@ let callback = await weixinApi.angerPay.orderQuery({
 <br>  
 
 > 以下方法和文档均继承自 `wechat-pay`   
+<hr>
 
 ### brandPay
 付钱
