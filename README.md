@@ -4,13 +4,13 @@
 
 ## 导航
 * 常用方法
-  * <a href="#getGlobalAccessToken">getGlobalAccessToken 获取 access_token</a>
-  * <a href="#getJsTicket">getJsTicket 获取 js api_ticket</a>
-  * <a href="#getAuthUrl">getAuthUrl 获取 Auth地址</a>
-  * <a href="#getAuthAccessTokenByCode">getAuthAccessTokenByCode 根据code获取 openid</a>
-  * <a href="#getUserInfo">getUserInfo 获取用户信息</a>
-  * <a href="#getJsSdkConfig">getJsSdkConfig 获取js sdk config配置</a>
-  * <a href="#isWechat">isWechat 判断是否是微信环境</a>
+  * <a href="#getglobalaccesstoken">getGlobalAccessToken 获取 access_token</a>
+  * <a href="#getjsticket">getJsTicket 获取 js api_ticket</a>
+  * <a href="#getauthurl">getAuthUrl 获取 Auth地址</a>
+  * <a href="#getauthaccesstokenbycode">getAuthAccessTokenByCode 根据code获取 openid</a>
+  * <a href="#getuserinfo">getUserInfo 获取用户信息</a>
+  * <a href="#getjssdkconfig">getJsSdkConfig 获取js sdk config配置</a>
+  * <a href="#iswechat">isWechat 判断是否是微信环境</a>
   
 * <a href="https://github.com/Jon-Millent/anger-wechat/blob/master/pay.MD">支付</a>
 
