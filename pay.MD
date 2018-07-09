@@ -13,6 +13,8 @@ var weixinApi = new AngerWechat({
         notifyUrl: '' // 【可选】微信支付接受到结果
     }
 })
+
+// 支付挂载在 weixinApi.angerPay ...
 ```
 ## api列表
 * `angerPay.scanCodePayment` <a href="#scancodepayment">刷卡支付</a>
