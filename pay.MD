@@ -180,9 +180,12 @@ let callback = await weixinApi.angerPay.sendRedPacket({
 })
 ```
 <br>
-<br>
-### redPacketQuery
-查询红包状态
+<br>  
+
+### redPacketQuery  
+
+查询红包状态  
+
 ```js
 let callback = await weixinApi.angerPay.redPacketQuery({
   mch_billno: 'kfc002'
