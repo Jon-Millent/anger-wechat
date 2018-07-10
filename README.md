@@ -177,7 +177,7 @@ let isWeixin = weixinApi.isWechat(request) // 传入 `request` 对象，返回 t
 # 附录
 
 ## 关于 authUrl 参数
-待补充。。。
+参考 <a href="https://github.com/Jon-Millent/GetWeixinCode">GetWeixinCode</a>
 
 ## 校验工具
 
