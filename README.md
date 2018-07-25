@@ -184,3 +184,6 @@ let isWeixin = weixinApi.isWechat(request) // 传入 `request` 对象，返回 t
 * <a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign">微信 JS 接口签名校验工具</a>
 * <a href="https://mp.weixin.qq.com/debug/">微信公众平台接口调试工具</a>
 
+## 请我喝杯咖啡，支持更多开源
+![1024.png](https://i.loli.net/2018/07/25/5b57cb91a44a1.png)
+
