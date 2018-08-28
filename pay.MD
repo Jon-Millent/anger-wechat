@@ -3,9 +3,9 @@
 ```js
 var AngerWechat = require('anger-wechat')
 var weixinApi = new AngerWechat({
-    appId: 'wxf638c1f64239e786', // appId
-    appSecret: 'e10c0db08562640e0a9fffab940724c2', // appSecret
-    authUrl: 'http://www.toolos.cc/get-weixin-code.html', // 微信auth2.0授权公共页面
+    appId: '', // appId
+    appSecret: '', // appSecret
+    authUrl: 'http://www.test.cc/get-weixin-code.html', // 微信auth2.0授权公共页面
     payment: { // 可选 如果需要支付模块的话
         mchId: '123456',
         partnerKey: '456789',
