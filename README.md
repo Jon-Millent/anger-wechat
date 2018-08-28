@@ -34,7 +34,7 @@ var weixinApi = new AngerWechat({
 })
 ```
 
-| 如果需要支付的话
+> 如果需要支付的话
 
 ```javascript
 var AngerWechat = require('anger-wechat')
@@ -54,7 +54,7 @@ var weixinApi = new AngerWechat({
 
 # Global
 ## `getGlobalAccessToken`    
-| 全局使用，建议保存在数据库  
+> 全局使用，建议保存在数据库  
 
 获取 access_token <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140183">戳我查看官方文档</a>
 > access_token是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用access_token。开发者需要进行妥善保存。access_token的存储至少要保留512个字符空间。access_token的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的access_token失效。
@@ -91,7 +91,7 @@ let isWeixin = weixinApi.isWechat(ua) // 传入 `UserAgent` 字符串，返回 t
 `[AngerWechat.Web]`
 
 ## `getJsTicket`
-| 全局使用，建议保存在数据库  
+> 全局使用，建议保存在数据库  
 
 获取 js api_ticket  <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115">戳我查看官方文档</a>
 > api_ticket 是用于调用微信卡券JS API的临时票据，有效期为7200 秒，通过access_token 来获取。
