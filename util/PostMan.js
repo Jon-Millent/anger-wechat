@@ -29,9 +29,6 @@ class PostMan {
   send(config){
   
     return new Promise(resolve => {
-  
-      console.log(util.concatUrlAndData(config.url, config.data))
-      
       request({
         method: (config.method || 'get').toUpperCase(),
         url: util.concatUrlAndData(config.url, config.data),
