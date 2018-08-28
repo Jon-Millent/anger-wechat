@@ -1,29 +1,34 @@
 # anger-wechat 😒🐷  
 <img src="https://img.shields.io/npm/dt/anger-wechat.svg">  <img src="https://img.shields.io/packagist/l/doctrine/orm.svg">  <img src="https://img.shields.io/github/package-json/v/jon-millent/anger-wechat.svg">
 
-![未标题-1.jpg](https://i.loli.net/2018/07/03/5b3b089da8d52.jpg)
+![未标题-1.jpg](https://user-gold-cdn.xitu.io/2018/8/28/1657e4024d0d2ec7?w=600&h=450&f=jpeg&s=76035)
 
-## 导航
-* 常用方法
-  * <a href="#getglobalaccesstoken">getGlobalAccessToken 获取 access_token</a>
-  * <a href="#getjsticket">getJsTicket 获取 js api_ticket</a>
-  * <a href="#getauthurl">getAuthUrl 获取 Auth地址</a>
-  * <a href="#getauthaccesstokenbycode">getAuthAccessTokenByCode 根据code获取 openid</a>
-  * <a href="#getuserinfo">getUserInfo 获取用户信息</a>
-  * <a href="#getjssdkconfig">getJsSdkConfig 获取js sdk config配置</a>
-  * <a href="#iswechat">isWechat 判断是否是微信环境</a>
+## Directory
+* `Global` 全局方法
+  * <a href="#iswechat">isWechat `判断是否是微信环境`</a>
+  * <a href="#getglobalaccesstoken">getGlobalAccessToken `获取 access_token`</a>
+* `Web` 适用于网页公众号开发
+  * <a href="#getjsticket">getJsTicket `获取 js api_ticket`</a>
+  * <a href="#getauthurl">getAuthUrl `获取 Auth地址`</a>
+  * <a href="#getauthaccesstokenbycode">getAuthAccessTokenByCode `根据code获取 openid`</a>
+  * <a href="#getuserinfo">getUserInfo `获取用户信息`</a>
+  * <a href="#getjssdkconfig">getJsSdkConfig `获取js sdk config配置`</a>
+* `Mini` 适用于小程序开发
+  * <a href="#getopenidbycode">getOpenidByCode `根据code换取 openid等`</a>
   
-* <a href="https://github.com/Jon-Millent/anger-wechat/blob/master/pay.MD">支付</a>
+* `angerPay` 适用于支付 
+  * <a href="https://github.com/Jon-Millent/anger-wechat/blob/master/pay.MD">`支付文档`</a>
 
-# 万恶之源-如何开始
+# Getting started
 `npm install anger-wechat --save`
 
+# Use
 ```javascript
 var AngerWechat = require('anger-wechat')
 var weixinApi = new AngerWechat({
-    appId: 'wxf638c1f64239e786', // appId
-    appSecret: 'e10c0db08562640e0a9fffab940724c2', // appSecret
-    authUrl: 'http://www.toolos.cc/get-weixin-code.html', // 微信auth2.0授权公共页面
+    appId: 'wxf638c1f64239e786', // appId 必传
+    appSecret: 'e10c0db08562640e0a9fffab940724c2', // appSecret 必传
+    authUrl: 'http://www.toolos.cc/get-weixin-code.html', // 可选 微信auth2.0授权公共页面
     payment: { // 可选 如果需要支付模块的话
         mchId: '123456',
         partnerKey: '456789',
@@ -32,10 +37,14 @@ var weixinApi = new AngerWechat({
     }
 })
 ```
-# 常用方法
-## `getGlobalAccessToken`  
+
+# Global
+## `getGlobalAccessToken`    
+| 全局使用，建议保存在数据库  
+
 获取 access_token <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140183">戳我查看官方文档</a>
 > access_token是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用access_token。开发者需要进行妥善保存。access_token的存储至少要保留512个字符空间。access_token的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的access_token失效。
+
 
 ```js
 let access_token = await weixinApi.getGlobalAccessToken()
@@ -54,12 +63,25 @@ let access_token = await weixinApi.getGlobalAccessToken()
 <br>
 <br>
 
+## `isWechat`
+判断是否是微信环境
+```js
+let isWeixin = weixinApi.isWechat(request) // 传入 `request` 对象，返回 true | false
+```
+<br>
+<br>
 
-## `getJsTicket`   
+
+# Web
+`[AngerWechat.Web]`
+
+## `getJsTicket`
+| 全局使用，建议保存在数据库  
+
 获取 js api_ticket  <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115">戳我查看官方文档</a>
 > api_ticket 是用于调用微信卡券JS API的临时票据，有效期为7200 秒，通过access_token 来获取。
 ```js
-let jsTrickt = await weixinApi.getJsTicket({
+let jsTrickt = await weixinApi.Web.getJsTicket({
     access_token: '11_oTBrYVsT9wqa_-q3WDNEBOtfz1XKdM7YKIcNBEiu29Wfh5yTnlqaj5W0hMuxZ7C9FlY7CxD0RjR35V1ik1M3Nyi5QENcgFKhh0gYoBnAXEQ2oV93sVtO7IRqhh1kd9QLG8fwyA3vFRdifpJCOVLgAGAVCS' // 以上一步获取到的access_token 获取 js api_ticket
   })
 ```
@@ -82,7 +104,7 @@ let jsTrickt = await weixinApi.getJsTicket({
 ## `getAuthUrl` 
 获取 Auth地址,重定向之后用来获取code
 ```js
-let authURl = weixinApi.getAuthUrl({
+let authURl = weixinApi.Web.getAuthUrl({
 	redirect_uri: 'http://www.baidu.com',
 	scope: 'snsapi_userinfo' // snsapi_base:静默授权，snsapi_userinfo:提示授权（可以后续获取用户信息）
 })
@@ -95,7 +117,7 @@ console.log(authURl)
 ## `getAuthAccessTokenByCode`   
 根据code获取 openid 
 ```js
-let codeInfo = await weixinApi.getAuthAccessTokenByCode({
+let codeInfo = await weixinApi.Web.getAuthAccessTokenByCode({
     code: '061729xv1BtSAa09g8yv1hr0xv1729xB'
 })
 ```
@@ -118,7 +140,7 @@ let codeInfo = await weixinApi.getAuthAccessTokenByCode({
 ## `getUserInfo`
 根据 `getAuthAccessTokenByCode` 获取的 `access_token` 和 `openid` 获取用户信息，注意这里的获取回调url方法 `getAuthUrl` 的 `scope` 需要传 `snsapi_userinfo`
 ```js
-let userInfo = await weixinApi.getUserInfo({
+let userInfo = await weixinApi.Web.getUserInfo({
 	access_token: codeInfo.data.access_token,
 	openid: codeInfo.data.openid
 })
@@ -147,7 +169,7 @@ let userInfo = await weixinApi.getUserInfo({
 ## `getJsSdkConfig`
 获取js sdk config配置 <a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign">微信 JS 接口签名校验工具</a>
 ```js
-let jsTricktConfig = await weixinApi.getJsSdkConfig({
+let jsTricktConfig = await weixinApi.Web.getJsSdkConfig({
 	ticket: 'HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCDQ2Bnx34ua3MVs9zUZpV0wQPe8h83AwFSZQREHGgmuKpqvdsg',
 	url: 'http://www.toolos.cc' // 调用js sdk 页面地址
 })
@@ -165,11 +187,25 @@ let jsTricktConfig = await weixinApi.getJsSdkConfig({
 <br>
 <br>  
 
-## `isWechat`
-判断是否是微信环境
+# Mini
+## `getJsSdkConfig`
+根据小程序传来的code获取openid等信息 <a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-login.html#wxloginobject">临时登录凭证code 获取 session_key 和 openid 等。</a>
 ```js
-let isWeixin = weixinApi.isWechat(request) // 传入 `request` 对象，返回 true | false
+let info = await weixinApi.Mini.getOpenidByCode({
+    code: 'xxxxxxxxxxxxxx'
+})
 ```
+
+```json
+{
+    "openid" : "oynY34-0Err_Y66_QIFsK-Ht1eGs",
+    "session_key" : "sPxOForFDlCP54n6cCfshw=="
+}
+```
+<br>
+<br>  
+
+
 
 # 支付
 <a href="https://github.com/Jon-Millent/anger-wechat/blob/master/pay.MD">戳我查看文档地址</a>
@@ -185,5 +221,5 @@ let isWeixin = weixinApi.isWechat(request) // 传入 `request` 对象，返回 t
 * <a href="https://mp.weixin.qq.com/debug/">微信公众平台接口调试工具</a>
 
 ## 请我喝杯咖啡，支持更多开源
-![1024.png](https://i.loli.net/2018/07/25/5b57cb91a44a1.png)
+![1024.png](https://user-gold-cdn.xitu.io/2018/8/28/1657e4024cf809c5?w=1024&h=600&f=png&s=98655)
 
