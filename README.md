@@ -188,7 +188,9 @@ let jsTricktConfig = await weixinApi.Web.getJsSdkConfig({
 <br>  
 
 # Mini
-## `getJsSdkConfig`
+`[AngerWechat.Mini]`  
+
+## `getOpenidByCode`
 根据小程序传来的code获取openid等信息 <a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-login.html#wxloginobject">临时登录凭证code 获取 session_key 和 openid 等。</a>
 ```js
 let info = await weixinApi.Mini.getOpenidByCode({
@@ -198,8 +200,8 @@ let info = await weixinApi.Mini.getOpenidByCode({
 
 ```json
 {
-    "openid" : "oynY34-0Err_Y66_QIFsK-Ht1eGs",
-    "session_key" : "sPxOForFDlCP54n6cCfshw=="
+    "openid" : "oynY34-0Err_YssQIFsK-Ht1eGs",
+    "session_key" : "sPxOFsssssCP54n6cCfshw=="
 }
 ```
 <br>
