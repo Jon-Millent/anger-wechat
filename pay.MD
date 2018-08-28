@@ -39,7 +39,7 @@ let callback = await weixinApi.angerPay.scanCodePayment({
     out_trade_no: 'lol1217752501201407033233368020', //【必传】商户订单号
     total_fee: 1, //【必传】收款价格，单位（分）
     spbill_create_ip: '127.0.0.1',//【必传】终端IP
-    auth_code: '100087493850578200',//【必传】付款码
+    auth_code: '100000000000',//【必传】付款码
     device_info: '',//【选传】设备号
     sign_type: '',//【选传】签名类型
     detail: '',//【选传】商品详情
