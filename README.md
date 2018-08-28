@@ -66,7 +66,8 @@ let access_token = await weixinApi.getGlobalAccessToken()
 ## `isWechat`
 判断是否是微信环境
 ```js
-let isWeixin = weixinApi.isWechat(request) // 传入 `request` 对象，返回 true | false
+let ua = request.headers["user-agent"]
+let isWeixin = weixinApi.isWechat(ua) // 传入 `UserAgent` 字符串，返回 true | false
 ```
 <br>
 <br>
