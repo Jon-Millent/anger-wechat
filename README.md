@@ -1,7 +1,9 @@
 # anger-wechat 😒🐷  
 <img src="https://img.shields.io/npm/dt/anger-wechat.svg">  <img src="https://img.shields.io/packagist/l/doctrine/orm.svg">  <img src="https://img.shields.io/github/package-json/v/jon-millent/anger-wechat.svg">
 
-![未标题-1.jpg](https://user-gold-cdn.xitu.io/2018/8/28/1657e4024d0d2ec7?w=600&h=450&f=jpeg&s=76035)
+<div align="center">
+    <img src="https://user-gold-cdn.xitu.io/2018/8/28/1657e6bbde0afb3a?w=374&h=249&f=png&s=16312">
+</div>
 
 ## Directory
 * `Global` 全局方法
