@@ -33,8 +33,8 @@ class AngerWechat{
   }
   
   // 是否是微信环境
-  isWechat(request){
-    let ua = request.headers["user-agent"].toLowerCase();
+  isWechat(UserAgent){
+    let ua = UserAgent.toLowerCase();
     return ua.match(/MicroMessenger/i)=="micromessenger";
     //如果是微信浏览器返回true 否则返回false
   }
