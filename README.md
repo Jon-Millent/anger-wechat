@@ -28,9 +28,20 @@
 ```javascript
 var AngerWechat = require('anger-wechat')
 var weixinApi = new AngerWechat({
-    appId: 'wxf638c1f64239e786', // appId 必传
-    appSecret: 'e10c0db08562640e0a9fffab940724c2', // appSecret 必传
-    authUrl: 'http://www.toolos.cc/get-weixin-code.html', // 可选 微信auth2.0授权公共页面
+    appId: '', // appId 必传
+    appSecret: '', // appSecret 必传
+    authUrl: 'http://www.test.cc/get-weixin-code.html'
+})
+```
+
+| 如果需要支付的话
+
+```javascript
+var AngerWechat = require('anger-wechat')
+var weixinApi = new AngerWechat({
+    appId: '', // appId 必传
+    appSecret: '', // appSecret 必传
+    authUrl: 'http://www.test.cc/get-weixin-code.html', // 可选 微信auth2.0授权公共页面
     payment: { // 可选 如果需要支付模块的话
         mchId: '123456',
         partnerKey: '456789',
@@ -39,6 +50,7 @@ var weixinApi = new AngerWechat({
     }
 })
 ```
+
 
 # Global
 ## `getGlobalAccessToken`    
