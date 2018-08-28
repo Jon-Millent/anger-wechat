@@ -40,9 +40,16 @@ module.exports = {
       
       
       
+    },
+    
+    mini: {
+      getOpenidByCode: {
+        helpMsg: '开发者服务器使用 临时登录凭证code 获取 session_key 和 openid 等。',
+        helpUrl: 'https://developers.weixin.qq.com/miniprogram/dev/api/api-login.html#wxloginobject',
+        url: 'https://api.weixin.qq.com/sns/jscode2session',
+        method: 'get'
+      }
     }
-    
-    
     
     
   }

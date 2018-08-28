@@ -30,6 +30,8 @@ class PostMan {
   
     return new Promise(resolve => {
   
+      console.log(util.concatUrlAndData(config.url, config.data))
+      
       request({
         method: (config.method || 'get').toUpperCase(),
         url: util.concatUrlAndData(config.url, config.data),
@@ -97,6 +99,21 @@ class PostMan {
     })
   }
   
+  
+  async mini_getOpenidByCode(input){
+    
+    let targetApi = wechatConfig.weixinApi.mini.getOpenidByCode
+    return await this.send({
+      method: targetApi.method,
+      url: targetApi.url,
+      data: {
+        appid: input.appId,
+        secret: input.secret,
+        js_code: input.js_code,
+        grant_type: 'authorization_code'
+      }
+    })
+  }
   
 }
 

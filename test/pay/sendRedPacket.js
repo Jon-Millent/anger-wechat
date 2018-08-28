@@ -1,4 +1,4 @@
-var AngerWechat = require('../index')
+var AngerWechat = require('../../index')
 var path = require('path')
 
 var weixinApi = new AngerWechat({
@@ -14,7 +14,7 @@ var weixinApi = new AngerWechat({
     }
 })
 
-weixinApi.payment.sendRedPacket({
+weixinApi.angerPay.sendRedPacket({
     total_num: 1,
     mch_billno: '1000000',
     send_name: '测试标题',
