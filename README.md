@@ -1,9 +1,35 @@
-# anger-wechat 😒🐷  
-<img src="https://img.shields.io/npm/dt/anger-wechat.svg">  <img src="https://img.shields.io/packagist/l/doctrine/orm.svg">  <img src="https://img.shields.io/github/package-json/v/jon-millent/anger-wechat.svg">
+<p align="center">
+  <img src="https://user-gold-cdn.xitu.io/2018/8/28/1657e6bbde0afb3a?w=374&h=249&f=png&s=16312">
+</p>
 
-<div align="center">
-    <img src="https://user-gold-cdn.xitu.io/2018/8/28/1657e6bbde0afb3a?w=374&h=249&f=png&s=16312">
-</div>
+<p align="center">
+  
+  <a>
+    <img src="https://img.shields.io/npm/dt/anger-wechat.svg">
+  </a>
+  <a>
+    <img src="https://img.shields.io/github/package-json/v/jon-millent/anger-wechat.svg">
+  </a>
+  <a>
+    <img src="https://badges.frapsoft.com/os/mit/mit.svg?v=103">
+  </a>
+  <a>
+    <img src="https://img.shields.io/github/package-json/v/jon-millent/faker.svg">
+  </a>
+  <a>
+    <img src="https://badges.frapsoft.com/os/v3/open-source.svg?v=103">
+  </a>
+  
+</p>
+
+<h1 align="center">
+anger-wechat 
+</h1>
+
+<h4 align="center">
+封装微信常用api
+</h4>
+
 
 ## Directory
 * `Global` 全局方法
