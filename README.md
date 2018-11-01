@@ -76,7 +76,7 @@ var weixinApi = new AngerWechat({
 
 
 # Global
-## `getGlobalAccessToken`    
+### `getGlobalAccessToken`    
 > 全局使用，建议保存在数据库  
 
 获取 access_token <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140183">戳我查看官方文档</a>
@@ -100,7 +100,7 @@ let access_token = await weixinApi.getGlobalAccessToken()
 <br>
 <br>
 
-## `isWechat`
+### `isWechat`
 判断是否是微信环境
 ```js
 let ua = request.headers["user-agent"]
@@ -113,7 +113,7 @@ let isWeixin = weixinApi.isWechat(ua) // 传入 `UserAgent` 字符串，返回 t
 # Web
 `[AngerWechat.Web]`
 
-## `getJsTicket`
+### `getJsTicket`
 > 全局使用，建议保存在数据库  
 
 获取 js api_ticket  <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115">戳我查看官方文档</a>
@@ -139,7 +139,7 @@ let jsTrickt = await weixinApi.Web.getJsTicket({
 <br>
 <br>
 
-## `getAuthUrl` 
+### `getAuthUrl` 
 获取 Auth地址,重定向之后用来获取code
 ```js
 let authURl = weixinApi.Web.getAuthUrl({
@@ -152,7 +152,7 @@ console.log(authURl)
 <br>
 <br>
 
-## `getAuthAccessTokenByCode`   
+### `getAuthAccessTokenByCode`   
 根据code获取 openid 
 ```js
 let codeInfo = await weixinApi.Web.getAuthAccessTokenByCode({
@@ -175,7 +175,7 @@ let codeInfo = await weixinApi.Web.getAuthAccessTokenByCode({
 <br>
 <br>
 
-## `getUserInfo`
+### `getUserInfo`
 根据 `getAuthAccessTokenByCode` 获取的 `access_token` 和 `openid` 获取用户信息，注意这里的获取回调url方法 `getAuthUrl` 的 `scope` 需要传 `snsapi_userinfo`
 ```js
 let userInfo = await weixinApi.Web.getUserInfo({
@@ -204,7 +204,7 @@ let userInfo = await weixinApi.Web.getUserInfo({
 <br>
 <br>
 
-## `getJsSdkConfig`
+### `getJsSdkConfig`
 获取js sdk config配置 <a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign">微信 JS 接口签名校验工具</a>
 ```js
 let jsTricktConfig = await weixinApi.Web.getJsSdkConfig({
@@ -228,7 +228,7 @@ let jsTricktConfig = await weixinApi.Web.getJsSdkConfig({
 # Mini
 `[AngerWechat.Mini]`  
 
-## `getOpenidByCode`
+### `getOpenidByCode`
 根据小程序传来的code获取openid等信息 <a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-login.html#wxloginobject">临时登录凭证code 获取 session_key 和 openid 等。</a>
 ```js
 let info = await weixinApi.Mini.getOpenidByCode({
@@ -252,19 +252,19 @@ let info = await weixinApi.Mini.getOpenidByCode({
 
 # 附录
 
-## 关于 authUrl 参数
+### 关于 authUrl 参数
 参考 <a href="https://github.com/Jon-Millent/GetWeixinCode">GetWeixinCode</a>
 
-## 校验工具
+### 校验工具
 
 * <a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign">微信 JS 接口签名校验工具</a>
 * <a href="https://mp.weixin.qq.com/debug/">微信公众平台接口调试工具</a>
 
-## 官方文档目录（真心想吐槽，找个文档真难）
+### 官方文档目录（真心想吐槽，找个文档真难）
 * <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115">js sdk</a>
 * <a href="https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_4&index=3">红包文档</a>
 * <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140183">access_token</a>
 
-## 请我喝杯咖啡，支持更多开源
+### 请我喝杯咖啡，支持更多开源
 ![1024.png](https://user-gold-cdn.xitu.io/2018/8/28/1657e4024cf809c5?w=1024&h=600&f=png&s=98655)
 
