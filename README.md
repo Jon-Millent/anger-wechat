@@ -260,6 +260,11 @@ let info = await weixinApi.Mini.getOpenidByCode({
 * <a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign">微信 JS 接口签名校验工具</a>
 * <a href="https://mp.weixin.qq.com/debug/">微信公众平台接口调试工具</a>
 
+## 官方文档目录（真心想吐槽，找个文档真难）
+* <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115">js sdk</a>
+* <a href="https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_4&index=3">红包文档</a>
+* <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140183">access_token</a>
+
 ## 请我喝杯咖啡，支持更多开源
 ![1024.png](https://user-gold-cdn.xitu.io/2018/8/28/1657e4024cf809c5?w=1024&h=600&f=png&s=98655)
 
