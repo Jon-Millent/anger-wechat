@@ -105,12 +105,13 @@ weixinApi.getGlobalAccessToken()
 ```js
 let access_token = await weixinApi.getGlobalAccessToken()
 ```
+<br/>
 
 ### isWechat
 判断是否是微信环境
 
 #### `@params`  
-weixinApi.getGlobalAccessToken(`[@userAgent: String]`)  
+weixinApi.isWechat(`[@userAgent: String]`)  
 * @userAgent : 浏览器useragent
 
 #### `@return`
@@ -122,6 +123,7 @@ weixinApi.getGlobalAccessToken(`[@userAgent: String]`)
 let ua = request.headers["user-agent"]
 let isWeixin = weixinApi.isWechat(ua)
 ```
+<br/>
 
 
 ### getJsTicket
@@ -159,12 +161,27 @@ let jsTrickt = await weixinApi.Web.getJsTicket({
     access_token: '11_oTBrYVsT9wqa_-q3WDNEBOtfz1XKdM7YKIcNBEiu29Wfh5yTnlqaj5W0hMuxZ7C9FlY7CxD0RjR35V1ik1M3Nyi5QENcgFKhh0gYoBnAXEQ2oV93sVtO7IRqhh1kd9QLG8fwyA3vFRdifpJCOVLgAGAVCS' // 
 })
 ```
+<br/>
 
 
 
 
-### `getAuthUrl` 
+### getAuthUrl
 获取 Auth地址,重定向之后用来获取code
+#### `@params`  
+weixinApi.Web.getAuthUrl(`[@config: Object]`)
+* @config : 配置
+  ```js
+  {
+    edirect_uri: 'http://www.baidu.com',
+    scope: 'snsapi_userinfo' // snsapi_base:静默授权，snsapi_userinfo:提示授权（可以后续获取用户信息）
+  }
+  ```
+
+#### `@return`
+返回解析后的重定向url
+
+#### `@example`
 ```js
 let authURl = weixinApi.Web.getAuthUrl({
 	redirect_uri: 'http://www.baidu.com',
@@ -174,15 +191,23 @@ console.log(authURl)
 // http://www.toolos.cc/get-weixin-code.html?appid=wxf638c1f64239e786&redirect_uri=http://www.baidu.com&scope=snsapi_userinfo&state=STATE
 ```
 <br>
-<br>
 
-### `getAuthAccessTokenByCode`   
+
+### getAuthAccessTokenByCode
 根据code获取 openid 
-```js
-let codeInfo = await weixinApi.Web.getAuthAccessTokenByCode({
+
+#### `@params`  
+weixinApi.Web.getAuthAccessTokenByCode(`[@config: Object]`)
+
+* @config : 配置
+  ```js
+  {
     code: '061729xv1BtSAa09g8yv1hr0xv1729xB'
-})
-```
+  }
+  ```
+
+#### `@return`
+返回openid
 ```json
 {
 	"code": 200,
@@ -195,18 +220,31 @@ let codeInfo = await weixinApi.Web.getAuthAccessTokenByCode({
 		"scope": "snsapi_userinfo"
 	}
 }
-```
-<br>
-<br>
+```  
 
-### `getUserInfo`
-根据 `getAuthAccessTokenByCode` 获取的 `access_token` 和 `openid` 获取用户信息，注意这里的获取回调url方法 `getAuthUrl` 的 `scope` 需要传 `snsapi_userinfo`
+#### `@example`
 ```js
-let userInfo = await weixinApi.Web.getUserInfo({
-	access_token: codeInfo.data.access_token,
-	openid: codeInfo.data.openid
+let codeInfo = await weixinApi.Web.getAuthAccessTokenByCode({
+    code: '061729xv1BtSAa09g8yv1hr0xv1729xB'
 })
 ```
+<br>
+
+
+### getUserInfo
+根据 `getAuthAccessTokenByCode` 获取的 `access_token` 和 `openid` 获取用户信息，注意这里的获取回调url方法 `getAuthUrl` 的 `scope` 需要传 `snsapi_userinfo` 
+
+#### `@params`  
+weixinApi.Web.getUserInfo(`[@config: Object]`)
+
+* config: 配置
+  ```js
+  {
+    access_token: access_token, // 根据 `getAuthAccessTokenByCode` 获取的 `access_token`
+    openid: openid // 根据 `getAuthAccessTokenByCode` 获取的 `openid`
+  }
+  ```
+#### `@return`
 ```json
 {
 	"code": 200,
@@ -224,19 +262,30 @@ let userInfo = await weixinApi.Web.getUserInfo({
 	}
 }
 ```
-
-<br>
-<br>
-
-### `getJsSdkConfig`
-获取js sdk config配置 <a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign">微信 JS 接口签名校验工具</a>
+#### `@example`
 ```js
-let jsTricktConfig = await weixinApi.Web.getJsSdkConfig({
-	ticket: 'HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCDQ2Bnx34ua3MVs9zUZpV0wQPe8h83AwFSZQREHGgmuKpqvdsg',
-	url: 'http://www.toolos.cc' // 调用js sdk 页面地址
+let userInfo = await weixinApi.Web.getUserInfo({
+	access_token: codeInfo.data.access_token,
+	openid: codeInfo.data.openid
 })
 ```
+<br>
 
+
+### getJsSdkConfig
+获取js sdk config配置 <a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign">微信 JS 接口签名校验工具</a>
+#### `@params`  
+weixinApi.Web.getJsSdkConfig(`[config: Object]`)
+
+* config: 配置
+  ```js
+  {
+    ticket: 'HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCDQ2Bnx34ua3MVs9zUZpV0wQPe8h83AwFSZQREHGgmuKpqvdsg', // 从 getJsTicket 方法获取的ticket
+    url: 'http://www.toolos.cc' // 调用js sdk 页面地址
+  }
+  ```
+  
+#### `@return`
 ```json
 {
 	"appId": "wxf638c1f64239e786",
@@ -245,29 +294,44 @@ let jsTricktConfig = await weixinApi.Web.getJsSdkConfig({
 	"timestamp": 1530636997,
 	"jsapi_ticket": "HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCDQ2Bnx34ua3MVs9zUZpV0wQPe8h83AwFSZQREHGgmuKpqvdsg"
 }
-```
-<br>
-<br>  
 
-# Mini
-`[AngerWechat.Mini]`  
-
-### `getOpenidByCode`
-根据小程序传来的code获取openid等信息 <a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-login.html#wxloginobject">临时登录凭证code 获取 session_key 和 openid 等。</a>
+#### `@example`
 ```js
-let info = await weixinApi.Mini.getOpenidByCode({
-    code: 'xxxxxxxxxxxxxx'
+let jsTricktConfig = await weixinApi.Web.getJsSdkConfig({
+	ticket: 'HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCDQ2Bnx34ua3MVs9zUZpV0wQPe8h83AwFSZQREHGgmuKpqvdsg',
+	url: 'http://www.toolos.cc'
 })
 ```
+<br>
 
+
+
+### getOpenidByCode
+根据小程序传来的code获取openid等信息 <a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-login.html#wxloginobject">临时登录凭证code 获取 session_key 和 openid 等。</a>
+
+#### `@params`  
+
+* config: 配置
+  ```js
+  {
+    code: 'xxxxxxxxxxxxxx'
+  }
+  ```
+#### `@return`
 ```json
 {
     "openid" : "oynY34-0Err_YssQIFsK-Ht1eGs",
     "session_key" : "sPxOFsssssCP54n6cCfshw=="
 }
 ```
+#### `@example`
+```js
+let info = await weixinApi.Mini.getOpenidByCode({
+    code: 'xxxxxxxxxxxxxx'
+})
+```
 <br>
-<br>  
+
 
 
 
