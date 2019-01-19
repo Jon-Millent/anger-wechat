@@ -294,6 +294,7 @@ weixinApi.Web.getJsSdkConfig(`[config: Object]`)
 	"timestamp": 1530636997,
 	"jsapi_ticket": "HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgK...."
 }
+```
 
 #### `@example`  
 
