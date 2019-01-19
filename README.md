@@ -295,13 +295,15 @@ weixinApi.Web.getJsSdkConfig(`[config: Object]`)
 	"jsapi_ticket": "HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgK...."
 }
 
-#### `@example`
+#### `@example`  
+
 ```js
 let jsTricktConfig = await weixinApi.Web.getJsSdkConfig({
-	ticket: 'HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCDQ2Bnx34...',
-	url: 'http://www.toolos.cc'
+  ticket: 'HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCDQ2Bnx34...',
+  url: 'http://www.toolos.cc'
 })
 ```
+
 <br>
 
 
