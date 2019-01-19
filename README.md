@@ -63,7 +63,7 @@ var weixinApi = new AngerWechat({
 ## API
 
 * AngerWechat
-  * 全局方法
+  * 全局
     * <a href="#iswechat">isWechat 判断是否是微信环境</a>
     * <a href="#getglobalaccesstoken">getGlobalAccessToken 获取 access_token</a>
   * 适用于网页公众号开发
@@ -80,23 +80,17 @@ var weixinApi = new AngerWechat({
 
 
 
-
-
-
-
-
-# Global
-### `getGlobalAccessToken`    
-> 全局使用，建议保存在数据库  
-
+### getGlobalAccessToken
+> 建议access_token保存在数据库  
 获取 access_token <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140183">戳我查看官方文档</a>
 > access_token是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用access_token。开发者需要进行妥善保存。access_token的存储至少要保留512个字符空间。access_token的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的access_token失效。
 
+#### `@params`  
+weixinApi.getGlobalAccessToken()  
+* 无参数
 
-```js
-let access_token = await weixinApi.getGlobalAccessToken()
-```
-
+#### `@return`
+返回 access_token
 ```json
 { 
 	"code": 200,
@@ -107,33 +101,45 @@ let access_token = await weixinApi.getGlobalAccessToken()
 	} 
 }
 ```  
-<br>
-<br>
+#### `@example`
+```js
+let access_token = await weixinApi.getGlobalAccessToken()
+```
 
-### `isWechat`
+### isWechat
 判断是否是微信环境
+
+#### `@params`  
+weixinApi.getGlobalAccessToken(`[@userAgent: String]`)  
+* @userAgent : 浏览器useragent
+
+#### `@return`
+返回 true | false
+
+
+#### `@example`
 ```js
 let ua = request.headers["user-agent"]
-let isWeixin = weixinApi.isWechat(ua) // 传入 `UserAgent` 字符串，返回 true | false
+let isWeixin = weixinApi.isWechat(ua)
 ```
-<br>
-<br>
 
 
-# Web
-`[AngerWechat.Web]`
-
-### `getJsTicket`
-> 全局使用，建议保存在数据库  
-
+### getJsTicket
+> 建议getJsTicket保存在数据库  
 获取 js api_ticket  <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115">戳我查看官方文档</a>
 > api_ticket 是用于调用微信卡券JS API的临时票据，有效期为7200 秒，通过access_token 来获取。
-```js
-let jsTrickt = await weixinApi.Web.getJsTicket({
-    access_token: '11_oTBrYVsT9wqa_-q3WDNEBOtfz1XKdM7YKIcNBEiu29Wfh5yTnlqaj5W0hMuxZ7C9FlY7CxD0RjR35V1ik1M3Nyi5QENcgFKhh0gYoBnAXEQ2oV93sVtO7IRqhh1kd9QLG8fwyA3vFRdifpJCOVLgAGAVCS' // 以上一步获取到的access_token 获取 js api_ticket
-  })
-```
 
+#### `@params`  
+weixinApi.Web.getJsTicket(`[@config: Object]`)
+* @config :传入从上一步获取到的access_token 获取 js api_ticket
+  ```js
+  {
+    access_token: '11_oTBrYVsT9wqa_-q3WDNEBOtfz1XKdM7YKIcNBEiu29Wfh5yTnlqaj5W0hMuxZ7C9FlY7CxD0RjR35V1ik1M3Nyi5QENcgFKhh0gYoBnAXEQ2oV93sVtO7IRqhh1kd9QLG8fwyA3vFRdifpJCOVLgAGAVCS' // 以上一步获取到的access_token 获取 js api_ticket
+  }
+  ```
+
+#### `@return`
+返回 ticket
 ```json
 {
 	"code": 200,
@@ -146,8 +152,16 @@ let jsTrickt = await weixinApi.Web.getJsTicket({
 	}
 }
 ```
-<br>
-<br>
+
+#### `@example`
+```js
+let jsTrickt = await weixinApi.Web.getJsTicket({
+    access_token: '11_oTBrYVsT9wqa_-q3WDNEBOtfz1XKdM7YKIcNBEiu29Wfh5yTnlqaj5W0hMuxZ7C9FlY7CxD0RjR35V1ik1M3Nyi5QENcgFKhh0gYoBnAXEQ2oV93sVtO7IRqhh1kd9QLG8fwyA3vFRdifpJCOVLgAGAVCS' // 
+})
+```
+
+
+
 
 ### `getAuthUrl` 
 获取 Auth地址,重定向之后用来获取code
