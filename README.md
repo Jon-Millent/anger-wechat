@@ -28,26 +28,13 @@ anger-wechat
 </h4>
 
 
-## Directory
-* `Global` 全局方法
-  * <a href="#iswechat">isWechat `判断是否是微信环境`</a>
-  * <a href="#getglobalaccesstoken">getGlobalAccessToken `获取 access_token`</a>
-* `Web` 适用于网页公众号开发
-  * <a href="#getjsticket">getJsTicket `获取 js api_ticket`</a>
-  * <a href="#getauthurl">getAuthUrl `获取 Auth地址`</a>
-  * <a href="#getauthaccesstokenbycode">getAuthAccessTokenByCode `根据code获取 openid`</a>
-  * <a href="#getuserinfo">getUserInfo `获取用户信息`</a>
-  * <a href="#getjssdkconfig">getJsSdkConfig `获取js sdk config配置`</a>
-* `Mini` 适用于小程序开发
-  * <a href="#getopenidbycode">getOpenidByCode `根据code换取 openid等`</a>
-  
-* `angerPay` 适用于支付 
-  * <a href="https://github.com/Jon-Millent/anger-wechat/blob/master/pay.MD">`支付文档`</a>
+## Install
 
-# Getting started
-`npm install anger-wechat --save`
+```
+npm i anger-wechat
+```
 
-# Use
+## Use
 ```javascript
 var AngerWechat = require('anger-wechat')
 var weixinApi = new AngerWechat({
@@ -57,8 +44,7 @@ var weixinApi = new AngerWechat({
 })
 ```
 
-> 如果需要支付的话
-
+如果需要支付的话
 ```javascript
 var AngerWechat = require('anger-wechat')
 var weixinApi = new AngerWechat({
@@ -73,6 +59,30 @@ var weixinApi = new AngerWechat({
     }
 })
 ```
+
+## API
+
+* AngerWechat
+  * 全局方法
+    * <a href="#iswechat">isWechat 判断是否是微信环境</a>
+    * <a href="#getglobalaccesstoken">getGlobalAccessToken 获取 access_token</a>
+  * 适用于网页公众号开发
+    * <a href="#getjsticket">getJsTicket `获取 js api_ticket`</a>
+    * <a href="#getauthurl">getAuthUrl 获取 Auth地址</a>
+    * <a href="#getauthaccesstokenbycode">getAuthAccessTokenByCode 根据code获取 openid</a>
+    * <a href="#getuserinfo">getUserInfo 获取用户信息</a>
+    * <a href="#getjssdkconfig">getJsSdkConfig 获取js sdk config配置</a>
+  * 适用于小程序开发
+    * <a href="#getopenidbycode">getOpenidByCode 根据code换取 openid等</a>
+  * 适用于支付 
+    * <a href="https://github.com/Jon-Millent/anger-wechat/blob/master/pay.MD">支付文档</a>
+
+
+
+
+
+
+
 
 
 # Global
