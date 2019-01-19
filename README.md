@@ -136,7 +136,7 @@ weixinApi.Web.getJsTicket(`[@config: Object]`)
 * @config :传入从上一步获取到的access_token 获取 js api_ticket
   ```js
   {
-    access_token: '11_oTBrYVsT9wqa_-q3WDNEBOtfz1XKdM7YKIcNBEiu29Wfh5yTnlqaj5W0hMuxZ7C9FlY7CxD0RjR35V1ik1M3Nyi5QENcgFKhh0gYoBnAXEQ2oV93sVtO7IRqhh1kd9QLG8fwyA3vFRdifpJCOVLgAGAVCS' // 以上一步获取到的access_token 获取 js api_ticket
+    access_token: '11_oTBrYVsT9wqa_-q3W...' // 以上一步获取到的access_token 获取 js api_ticket
   }
   ```
 
@@ -149,7 +149,7 @@ weixinApi.Web.getJsTicket(`[@config: Object]`)
 	"data": {
 		"errcode": 0,
 		"errmsg": "ok",
-		"ticket": "HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCDQ2BnyLbfAJHCZXUIs992xQP246Nzp7LCNupv5Jablw8COZ_w",
+		"ticket": "HoagFKDcsGMVCIY2vOjf9oKOmI5MR...",
 		"expires_in": 7200
 	}
 }
@@ -158,7 +158,7 @@ weixinApi.Web.getJsTicket(`[@config: Object]`)
 #### `@example`
 ```js
 let jsTrickt = await weixinApi.Web.getJsTicket({
-    access_token: '11_oTBrYVsT9wqa_-q3WDNEBOtfz1XKdM7YKIcNBEiu29Wfh5yTnlqaj5W0hMuxZ7C9FlY7CxD0RjR35V1ik1M3Nyi5QENcgFKhh0gYoBnAXEQ2oV93sVtO7IRqhh1kd9QLG8fwyA3vFRdifpJCOVLgAGAVCS' // 
+    access_token: '11_oTBrYVsT9wqa_-V1LgAGAVCS...'
 })
 ```
 <br/>
@@ -213,9 +213,9 @@ weixinApi.Web.getAuthAccessTokenByCode(`[@config: Object]`)
 	"code": 200,
 	"msg": "请求成功",
 	"data": {
-		"access_token": "11_Vc7D8AoYURWoECzJgD6Q1ccUOOHypO6mU0RQF7BnliKKCY5arfVvl0h3PWURwpK7QFgPLfDkHLX-9Dif6BTntw",
+		"access_token": "11_Vc7D8AoYURWoECzJgD6Q1ccUOOHypO...",
 		"expires_in": 7200,
-		"refresh_token": "11_ii3uONcMPA-04RjuLlckMMiwaDGF2MjW2SB5vOI3Sshz39PAVn7kOyC80_pPmmRJxqbfJ3Rdw07WG154AeP83Q",
+		"refresh_token": "11_ii3uONcMPA-04RjuLlckMMiwaDGF2MjW2SB5...",
 		"openid": "oI-Aa04T6FrpFFpTfyAaXR4SKacU",
 		"scope": "snsapi_userinfo"
 	}
@@ -257,7 +257,7 @@ weixinApi.Web.getUserInfo(`[@config: Object]`)
 		"city": "**",
 		"province": "**",
 		"country": "中国",
-		"headimgurl": "http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIS3x9dFdptD1s2ZZMTDCriaiaXiaDPtyZw3vfMmJLyQ8PU8laBv4MNnJh5c9QWtTQey0m4FYUPVEvAQ/132",
+		"headimgurl": "http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfT...",
 		"privilege": []
 	}
 }
@@ -280,7 +280,7 @@ weixinApi.Web.getJsSdkConfig(`[config: Object]`)
 * config: 配置
   ```js
   {
-    ticket: 'HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCDQ2Bnx34ua3MVs9zUZpV0wQPe8h83AwFSZQREHGgmuKpqvdsg', // 从 getJsTicket 方法获取的ticket
+    ticket: 'HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCD...', // 从 getJsTicket 方法获取的ticket
     url: 'http://www.toolos.cc' // 调用js sdk 页面地址
   }
   ```
@@ -292,13 +292,13 @@ weixinApi.Web.getJsSdkConfig(`[config: Object]`)
 	"signature": "2c18eb8d6adaa5e02a9df517e776f5eef40ed402",
 	"noncestr": "04b21a6a-caea-4878-9fdb-8b2c1ff699b0",
 	"timestamp": 1530636997,
-	"jsapi_ticket": "HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCDQ2Bnx34ua3MVs9zUZpV0wQPe8h83AwFSZQREHGgmuKpqvdsg"
+	"jsapi_ticket": "HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgK...."
 }
 
 #### `@example`
 ```js
 let jsTricktConfig = await weixinApi.Web.getJsSdkConfig({
-	ticket: 'HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCDQ2Bnx34ua3MVs9zUZpV0wQPe8h83AwFSZQREHGgmuKpqvdsg',
+	ticket: 'HoagFKDcsGMVCIY2vOjf9oKOmI5MRTBgKJJwCDQ2Bnx34...',
 	url: 'http://www.toolos.cc'
 })
 ```
